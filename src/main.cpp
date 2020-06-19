@@ -358,7 +358,7 @@ void printHelp() {
               << "press Esc to quit.\n"
               << "press 'o' to save a screenshot to \"../resource/screenshot.png\".\n"
               << "press 'i' to move teapot and robot to initial position.\n"
-              << "press 'i' to move teapot and robot to initial position, and reset all variables.\n"
+              << "press 'I' to move teapot and robot to initial position, and reset all variables.\n"
               << "press 'p' to start/stop animation.\n"
               << "press 't' to turn texturing on/off.\n"
               << "press 'a', 'b', 'c', 'd' to set teapot location, robot movement, robot location and robot movement limit\n"
