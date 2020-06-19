@@ -3,7 +3,6 @@
 #include "../header/shaders.h"
 #include "../header/Bmp.h"
 #include "../header/geometry3.h"
-#include "../header/variable.h"
 
 /* New helper transformation function to transform vector by modelview */
 void transformvec(const GLfloat input[4], GLfloat output[4]) {
@@ -13,7 +12,6 @@ void transformvec(const GLfloat input[4], GLfloat output[4]) {
     output[1] = outputvec[1];
     output[2] = outputvec[2];
     output[3] = outputvec[3];
-
 }
 
 // Treat this as a destructor function. Delete any dynamically allocated memory here
@@ -65,6 +63,7 @@ void display(void) {
         drawcylinder();
         popMatrix(modelview);
     }
+
     // 3rd pillar
     {
         pushMatrix(modelview);
@@ -75,6 +74,7 @@ void display(void) {
         drawcylinder();
         popMatrix(modelview);
     }
+
     // 4th pillar
     {
         pushMatrix(modelview);
@@ -85,6 +85,7 @@ void display(void) {
         drawcylinder();
         popMatrix(modelview);
     }
+
     // light source 3 position
     GLfloat light2[4];
     const GLfloat light_specular2[] = {0, 1.0, 0, 1}; // green
@@ -99,7 +100,6 @@ void display(void) {
     popMatrix(modelview);
 
     // Draw a teapot
-
     /* New for Demo; add lighting effects */
     {
         const GLfloat one[] = {1, 1, 1, 1}; //rgba
@@ -114,7 +114,6 @@ void display(void) {
         const GLfloat light_specular1[] = {0, 0.5, 1, 1}; // blue
         const GLfloat light_position1[] = {0, -0.5, 0, 1};
 
-
         GLfloat light0[4], light1[4];
 
         // Set Light and Material properties for the teapot
@@ -123,7 +122,6 @@ void display(void) {
         // So we need to do so manually.
         transformvec(light_direction, light0);
         transformvec(light_position1, light1);
-
 
         glUniform3fv(light0dirn, 1, light0);
         glUniform4fv(light0color, 1, light_specular);
@@ -137,14 +135,12 @@ void display(void) {
         glUniform4fv(specular, 1, one);
         glUniform1fv(shininess, 1, high);
 
-
         // Enable and Disable everything around the teapot
         // Generally, we would also need to define normals etc.
         // In the old OpenGL code, GLUT defines normals for us. The glut teapot can't
         // be drawn in modern OpenGL, so we need to load a 3D model for it. The normals
         // are defined in the 3D model file.
         glUniform1i(islight, lighting); // turn on lighting only for teapot.
-
     }
     //  ** NEW ** Put a teapot in the middle that animates
     glUniform3f(colorPos, 0.0f, 1.0f, 1.0f);
@@ -164,68 +160,36 @@ void display(void) {
     drawteapot();
     popMatrix(modelview);
 
-
-    //// robot
+    // robot
     pushMatrix(modelview);
     modelview = modelview * glm::translate(identity, glm::vec3(robotlocX, robotlocY, robotlocZ));
     modelview = modelview * glm::translate(identity, glm::vec3(-0.4, -0.4, 0.0));
     glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
-    //glUniform3fv(colorPos, 1, _cubecol[0]); // red
-    //drawcolor(CUBE, 0);
 
-    //================================================
-    ///* robot head
+    // robot head
     {
-        //const GLfloat low[] = { 0.1 };
-
-        //glUniform1fv(shininess, 1, low);
         glUniform1i(istex, texturing);
 
         pushMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 1.0));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
 
-        //drawsphere();
         drawspheretexture(spheretexNames[0]);
         popMatrix(modelview);
         glUniform1i(istex, 0); // Other items aren't textured
     }
 
-    // 1st pillar
-// This function builds a new matrix. It doesn't actually modify the passed in matrix.
-// Consequently, we need to assign this result to modelview.
-    //pushMatrix(modelview);
-    //modelview = modelview * glm::translate(identity, glm::vec3(teapotloc, 0.0, 0.0));
-    //modelview = modelview * glm::translate(identity, glm::vec3(-0.4, -0.4, 0.0));
-    //glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
-    //glUniform3fv(colorPos, 1, _cubecol[0]); // red
-    //drawcolor(CUBE, 0);
-
-    //================================================
-    /* robot head
-    {
-        pushMatrix(modelview);
-        modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 1.0)) ;
-        glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
-        drawsphere();
-        popMatrix(modelview);
-    }
-    */
-    ///* robot body
+    // robot body
     {
         pushMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 0.6));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[0]); // red
-        //drawcolor(CUBE, 0);
-        //solidCube(1.0);
         drawcylinder();
         popMatrix(modelview);
     }
-    //*/
 
-
-    ///* robot right arm
+    // robot right arm
     {
         pushMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, -0.2, 0.8));
@@ -238,7 +202,6 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.2, 0.2, 0.52));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[1]); // green
-        //drawcolor(CUBE, 2);
         drawcylinder();
         popMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 0.14)) *
@@ -249,13 +212,11 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.2, 0.2, 0.52));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[3]); // white
-        //drawcolor(CUBE, 1);
         drawcylinder();
         popMatrix(modelview);
         popMatrix(modelview);
-        //*/
     }
-    ///* robot left arm
+    // robot left arm
     {
         pushMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.15, 0.8));
@@ -268,7 +229,6 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.2, 0.2, 0.52));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[1]); // green
-        //drawcolor(CUBE, 2);
         drawcylinder();
         popMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 0.14)) *
@@ -279,16 +239,12 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.2, 0.2, 0.52));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[2]); // blue
-        //drawcolor(CUBE, 1);
         drawcylinder();
         popMatrix(modelview);
         popMatrix(modelview);
-        //*/
-
-        //===================================================
     }
 
-    ///* robot right leg
+    // robot right leg
     {
         pushMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0, -0.06, 0.55));
@@ -301,7 +257,6 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.4, 0.4, 1.1));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[1]); // green
-        //drawcolor(CUBE, 2);
         drawcylinder();
         popMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 0.3)) *
@@ -312,15 +267,12 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.4, 0.4, 1.0));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[3]); // white
-        //drawcolor(CUBE, 1);
         drawcylinder();
         popMatrix(modelview);
         popMatrix(modelview);
-        //*/
-
-        //===================================================
     }
-    ///* robot left leg
+
+    // robot left leg
     {
         pushMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.06, 0.55));
@@ -333,7 +285,6 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.4, 0.4, 1.1));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[1]); // green
-        //drawcolor(CUBE, 2);
         drawcylinder();
         popMatrix(modelview);
         modelview = modelview * glm::translate(identity, glm::vec3(0.0, 0.0, 0.3)) *
@@ -344,16 +295,9 @@ void display(void) {
         modelview = modelview * glm::scale(identity, glm::vec3(0.4, 0.4, 1.0));
         glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
         glUniform3fv(colorPos, 1, _cubecol[2]); // blue
-        //drawcolor(CUBE, 1);
         drawcylinder();
         popMatrix(modelview);
         popMatrix(modelview);
-        //*/
-
-
-
-
-        //===================================================
     }
 
     popMatrix(modelview);
@@ -569,7 +513,6 @@ void init(void) {
     /* initialize viewing values  */
     projection = glm::mat4(1.0f); // The identity matrix
     modelview = glm::lookAt(glm::vec3(0, -eyeloc, eyeloc), glm::vec3(0, 0, 0), glm::vec3(0, 1, 1));
-
 
     // Initialize the shaders
 
