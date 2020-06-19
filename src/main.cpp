@@ -304,13 +304,6 @@ void display(void) {
 
     popMatrix(modelview);
 
-    // Does order of drawing matter?
-    // What happens if I draw the ground after the pillars?
-    // I will show this in class.
-
-    // glUniformMatrix4fv(modelviewPos, 1, GL_FALSE, &(modelview)[0][0]);
-    // drawobject(FLOOR) ;
-
     // don't wait!
     // start processing buffered OpenGL routines
 
