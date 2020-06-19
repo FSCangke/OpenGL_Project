@@ -607,7 +607,7 @@ void anime(int argc, char **argv) {
     deleteBuffers();
 }
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[]) {
     anime(argc, argv);
     return 0;   /* ANSI C requires main to return int. */
 }
