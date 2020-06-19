@@ -19,7 +19,7 @@
 #include <iomanip>
 
 GLfloat ramount = 2.5, slamount = 0.5, kneeamount = 0.25;
-GLint maxlimit = 210, minlimit = 150;
+GLfloat maxlimit = 210, minlimit = 150;
 
 int mouseoldx, mouseoldy; // For mouse motion
 int windowWidth = 500, windowHeight = 500; //Width/Height of OpenGL window

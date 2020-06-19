@@ -10,13 +10,6 @@
 // ** NEW ** in this assignment, is an animation of a teapot
 // Hitting p will pause this animation; see keyboard callback
 
-void setrobotlimit() {
-    printf("%d;%d\n", maxlimit, minlimit);
-    printf("input ramount\n");
-    scanf("%d//%d", &maxlimit, &minlimit);
-    printf("%d;%d\n", maxlimit, minlimit);
-}
-
 void initall() {
     rotamount = 45.0;
     teapotlocX = -0.05;
@@ -68,23 +61,30 @@ void animation(void) {
 
 void setteapotloc() {
     printf("%.2f;%.2f;%.2f;%.2f\n", ramount, teapotlocX, teapotlocY, teapotlocZ);
-    printf("input ramount\n");
-    scanf("%f//%f//%f//%f", &ramount, &teapotlocX, &teapotlocY, &teapotlocZ);
+    printf("input numbers\n");
+    scanf("%f/%f/%f/%f", &ramount, &teapotlocX, &teapotlocY, &teapotlocZ);
     printf("%.2f;%.2f;%.2f;%.2f\n", ramount, teapotlocX, teapotlocY, teapotlocZ);
 }
 
 void setrobotmove() {
     printf("%.2f;%.2f;\n", slamount, kneeamount);
     printf("input ramount\n");
-    scanf("%f//%f", &slamount, &kneeamount);
+    scanf("%f/%f", &slamount, &kneeamount);
     printf("%.2f;%.2f;\n", slamount, kneeamount);
 }
 
 void setrobotloc() {
     printf("%.2f;%.2f;%.2f\n", robotlocX, robotlocY, robotlocZ);
     printf("input ramount\n");
-    scanf("%f//%f//%f", &robotlocX, &robotlocY, &robotlocZ);
+    scanf("%f/%f/%f", &robotlocX, &robotlocY, &robotlocZ);
     printf("%.2f;%.2f;%.2f\n", robotlocX, robotlocY, robotlocZ);
+}
+
+void setrobotlimit() {
+    printf("%d;%d\n", maxlimit, minlimit);
+    printf("input ramount\n");
+    scanf("%d/%d", &maxlimit, &minlimit);
+    printf("%d;%d\n", maxlimit, minlimit);
 }
 
 #endif //OPENGL_EDITION_H
