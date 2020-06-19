@@ -1,0 +1,4 @@
+/Users/Dark/CLionProjects/OpenGL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Dark/CLionProjects/OpenGL/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Dark/CLionProjects/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir
+/Users/Dark/CLionProjects/OpenGL/cmake-build-debug/CMakeFiles/OpenGL_autogen.dir
