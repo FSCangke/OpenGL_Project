@@ -1,2 +1,2 @@
 # OpenGL_Project
-#This is the demo of 3d real time animation
+This is the demo of 3d real time animation
