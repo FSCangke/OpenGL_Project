@@ -356,7 +356,7 @@ void printHelp() {
     std::cout << "\nAvailable commands:\n"
               << "press 'h' to print this message again.\n"
               << "press Esc to quit.\n"
-              << "press 'o' to save a screenshot to \"./screenshot.png\".\n"
+              << "press 'o' to save a screenshot to \"../resource/screenshot.png\".\n"
               << "press 'i' to move teapot and robot to initial position.\n"
               << "press 'i' to move teapot and robot to initial position, and reset all variables.\n"
               << "press 'p' to start/stop animation.\n"
