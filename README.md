@@ -554,4 +554,7 @@ void initloc() {
 
 ## How this program works?
 
-TBD
++ First step
+    + Decide where the models and objects located.
+    + Import models and objects.
+    + Design animations.
