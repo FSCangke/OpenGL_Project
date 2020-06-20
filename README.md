@@ -47,6 +47,8 @@ press 's' to turn shading on/off.
 
 Here are some codes.
 
+---
+
 <details>
     <summary>Display</summary>
     
@@ -337,6 +339,8 @@ void display(void) {
 ```
 </details>
 
+---
+
 <details>
     <summary>Keyboard</summary>
 
@@ -410,6 +414,8 @@ void keyboard(unsigned char key, int x, int y) {
 ```
 </details>
 
+---
+
 <details>
     <summary>Anime</summary>
 
@@ -457,6 +463,8 @@ void anime(int argc, char **argv) {
 ```
 </details>
 
+---
+
 <details>
     <summary>Default animation</summary>
 
@@ -486,6 +494,8 @@ void animation(void) {
 }
 ```
 </details>
+
+---
 
 <details>
     <summary>Editions of location, rotation amount, etc...</summary>
@@ -520,6 +530,8 @@ void setrobotlimit() {
 }
 ```
 </details>
+
+---
 
 <details>
     <summary>Initial functions</summary>
