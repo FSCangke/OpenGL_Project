@@ -17,6 +17,9 @@ OpenGL 4.0, cmake 3.17.3, glew 2.1.0_1, glfw 3.3.2, glm 0.9.9.8, freeimage 3.18.
 
 ## Commands
 
+<details>
+    <summary>Available commands</summary>
+
 >Available commands:  
 press 'h' to print this message again.  
 press Esc to quit.  
@@ -28,6 +31,8 @@ press 't' to turn texturing on/off.
 press 'a', 'b', 'c', 'd' to set teapot location, robot movement, robot location and robot movement limit. 
 press 's' to turn shading on/off.  
 >
+
+</details>
 
 ## Code
 
