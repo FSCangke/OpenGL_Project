@@ -1,7 +1,14 @@
 # OpenGL_Project
+
 This is the demo of 3d real time animation, develop on MacOS.
-## 1. Functions
-Available commands:  
+
+## Develop environment
+
+OpenGL 4.0, cmake 3.17.3, glew 2.1.0_1, glfw 3.3.2, glm 0.9.9.8, freeimage 3.18.0
+
+### Functions
+
+>Available commands:  
 press 'h' to print this message again.  
 press Esc to quit.  
 press 'o' to save a screenshot to "../resource/screenshot.png\".  
@@ -11,11 +18,15 @@ press 'p' to start/stop animation.
 press 't' to turn texturing on/off.  
 press 'a', 'b', 'c', 'd' to set teapot location, robot movement, robot location and robot movement limit. 
 press 's' to turn shading on/off.  
-## 2. Code
+>
+
+## Code
+
 Here is code.
 
 + Display
-```
+
+```c++
 void display(void) {
     // clear all pixels
 
@@ -300,8 +311,10 @@ void display(void) {
     glFlush();
 }
 ```
+
 + Keyboard
-```
+
+```c++
 void keyboard(unsigned char key, int x, int y) {
     switch (key) {
         case 'h':
