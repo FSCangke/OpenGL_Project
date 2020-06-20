@@ -34,7 +34,7 @@ press 's' to turn shading on/off.
 Here are some codes.
 
 <details>
-    <summary>1.Display</summary>
+    <summary>Display</summary>
     
 ```c++
 void display(void) {
@@ -321,10 +321,10 @@ void display(void) {
     glFlush();
 }
 ```
-
 </details>
 
-+ Keyboard
+<details>
+    <summary>Keyboard</summary>
 
 ```c++
 void keyboard(unsigned char key, int x, int y) {
@@ -394,8 +394,10 @@ void keyboard(unsigned char key, int x, int y) {
     }
 }
 ```
+</details>
 
-+ anime
+<details>
+    <summary>Anime</summary>
 
 ```c++
 void anime(int argc, char **argv) {
@@ -439,8 +441,10 @@ void anime(int argc, char **argv) {
     deleteBuffers();
 }
 ```
+</details>
 
-+ Default animation
+<details>
+    <summary>Default animation</summary>
 
 ```c++
 void animation(void) {
@@ -467,8 +471,10 @@ void animation(void) {
     glutPostRedisplay();
 }
 ```
+</details>
 
-+ Editions of location, rotation amount, etc...
+<details>
+    <summary>Editions of location, rotation amount, etc...</summary>
 
 ```c++
 void setteapotloc() {
@@ -499,8 +505,10 @@ void setrobotlimit() {
     printf("%d;%d\n", maxlimit, minlimit);
 }
 ```
+</details>
 
-+ Initial functions
+<details>
+    <summary>Initial functions</summary>
 
 ```c++
 void initall() {
@@ -528,6 +536,7 @@ void initloc() {
     robotlocX = -0.05;
 }
 ```
+</details>
 
 ## How this program works?
 
