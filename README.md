@@ -6,7 +6,9 @@ This is the demo of 3d real time animation, develop on MacOS.
 
 OpenGL 4.0, cmake 3.17.3, glew 2.1.0_1, glfw 3.3.2, glm 0.9.9.8, freeimage 3.18.0
 
-### Commands
+
+
+## Commands
 
 >Available commands:  
 press 'h' to print this message again.  
@@ -516,3 +518,7 @@ void initloc() {
     robotlocX = -0.05;
 }
 ```
+
+## How this program works?
+
+TBD
