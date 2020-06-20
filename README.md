@@ -382,8 +382,10 @@ void keyboard(unsigned char key, int x, int y) {
     }
 }
 ```
+
 + anime
-```
+
+```c++
 void anime(int argc, char **argv) {
 
     FreeImage_Initialise(); // FreeImage is an Open Source library project for developers who would
