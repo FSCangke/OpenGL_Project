@@ -4,7 +4,12 @@ This is the demo of 3d real time animation, develop on MacOS.
 
 ## Contents
 
-[TOC]
+- [OpenGL_Project](#opengl-project)
+  * [Contents](#contents)
+  * [Develop environment](#develop-environment)
+  * [Commands](#commands)
+  * [Code](#code)
+  * [How this program works?](#how-this-program-works-)
 
 ## Develop environment
 
