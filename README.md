@@ -47,8 +47,6 @@ press 's' to turn shading on/off.
 
 Here are some codes.
 
----
-
 <details>
     <summary>Display</summary>
     
