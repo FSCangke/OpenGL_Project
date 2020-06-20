@@ -33,8 +33,9 @@ press 's' to turn shading on/off.
 
 Here are some codes.
 
-+ Display
-
+<details>
+    <summary>1.Display</summary>
+    
 ```c++
 void display(void) {
     // clear all pixels
@@ -320,6 +321,8 @@ void display(void) {
     glFlush();
 }
 ```
+
+</details>
 
 + Keyboard
 
