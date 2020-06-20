@@ -16,7 +16,7 @@
 // CREATED: 2006-05-08
 // UPDATED: 2019-07-20
 ///////////////////////////////////////////////////////////////////////////////
-
+//Here is the example of fetch
 #ifndef IMAGE_BMP_H
 #define IMAGE_BMP_H
 
