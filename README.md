@@ -6,7 +6,7 @@ This is the demo of 3d real time animation, develop on MacOS.
 
 OpenGL 4.0, cmake 3.17.3, glew 2.1.0_1, glfw 3.3.2, glm 0.9.9.8, freeimage 3.18.0
 
-### Functions
+### Commands
 
 >Available commands:  
 press 'h' to print this message again.  
@@ -22,7 +22,7 @@ press 's' to turn shading on/off.
 
 ## Code
 
-Here is code.
+Here are some codes.
 
 + Display
 
@@ -425,5 +425,94 @@ void anime(int argc, char **argv) {
     glutMainLoop(); // Start the main code
     FreeImage_DeInitialise();
     deleteBuffers();
+}
+```
+
++ Default animation
+
+```c++
+void animation(void) {
+    teapotlocX = teapotlocX + 0.0025;
+    robotlocX = robotlocX + 0.0025;
+    rotamount = rotamount + ramount;
+    if (teapotlocX > 1.0) teapotlocX = -0.5;
+    if (robotlocX > 1.0) robotlocX = -0.5;
+    if (rotamount > 360.0) rotamount = 0.0;
+    if (shoulderr > maxlimit) {
+        sign = -1;
+    } else if (shoulderr < minlimit) {
+        sign = 1;
+    }
+    shoulderr = shoulderr + sign * slamount;
+    elbowr = elbowr + sign * slamount;
+    shoulderl = shoulderl - sign * slamount;
+    elbowl = elbowl - sign * slamount;
+    legr = legr - sign * slamount;
+    kneer = kneer + sign * kneeamount;
+    legl = legl + sign * slamount;
+    kneel = kneel - sign * kneeamount;
+
+    glutPostRedisplay();
+}
+```
+
++ Editions of location, rotation amount, etc...
+
+```c++
+void setteapotloc() {
+    printf("%.2f;%.2f;%.2f;%.2f\n", ramount, teapotlocX, teapotlocY, teapotlocZ);
+    printf("input numbers\n");
+    scanf("%f/%f/%f/%f", &ramount, &teapotlocX, &teapotlocY, &teapotlocZ);
+    printf("%.2f;%.2f;%.2f;%.2f\n", ramount, teapotlocX, teapotlocY, teapotlocZ);
+}
+
+void setrobotmove() {
+    printf("%.2f;%.2f;\n", slamount, kneeamount);
+    printf("input ramount\n");
+    scanf("%f/%f", &slamount, &kneeamount);
+    printf("%.2f;%.2f;\n", slamount, kneeamount);
+}
+
+void setrobotloc() {
+    printf("%.2f;%.2f;%.2f\n", robotlocX, robotlocY, robotlocZ);
+    printf("input ramount\n");
+    scanf("%f/%f/%f", &robotlocX, &robotlocY, &robotlocZ);
+    printf("%.2f;%.2f;%.2f\n", robotlocX, robotlocY, robotlocZ);
+}
+
+void setrobotlimit() {
+    printf("%d;%d\n", maxlimit, minlimit);
+    printf("input ramount\n");
+    scanf("%d/%d", &maxlimit, &minlimit);
+    printf("%d;%d\n", maxlimit, minlimit);
+}
+```
+
++ Initial functions
+
+```c++
+void initall() {
+    rotamount = 45.0;
+    teapotlocX = -0.05;
+    robotlocX = -0.05;
+    shoulderl = 210;
+    elbowl = -5;
+    shoulderr = 150;
+    elbowr = -65;
+    legl = 150;
+    kneel = 30;
+    legr = 210;
+    kneer = 0;
+    maxlimit = 210;
+    minlimit = 150;
+    ramount = 2.5;
+    slamount = 0.5;
+    kneeamount = 0.25;
+}
+
+void initloc() {
+    rotamount = 45.0;
+    teapotlocX = -0.05;
+    robotlocX = -0.05;
 }
 ```
