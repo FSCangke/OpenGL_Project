@@ -13,7 +13,16 @@ This is the demo of 3d real time animation, develop on MacOS.
 
 ## Develop environment
 
-OpenGL 4.0, cmake 3.17.3, glew 2.1.0_1, glfw 3.3.2, glm 0.9.9.8, freeimage 3.18.0
+<details>
+    <summary>Tools</summary>
+    
++ OpenGL 4.0
++ cmake 3.17.3
++ glew 2.1.0_1
++ glfw 3.3.2
++ glm 0.9.9.8
++ freeimage 3.18.0
+</details>
 
 ## Commands
 
